@@ -1,0 +1,55 @@
+# ============================================================
+# Geospatial Python Mastery — Course Dependencies
+# ============================================================
+# Install with:
+#   pip install -r requirements.txt
+#
+# Windows users: use conda instead (see environment.yml)
+#   conda env create -f environment.yml
+#
+# macOS/Linux users may need system GDAL first:
+#   macOS : brew install gdal proj geos
+#   Linux : sudo apt-get install gdal-bin libgdal-dev libproj-dev
+# ============================================================
+
+# ── Jupyter Environment ──────────────────────────────────────
+jupyterlab>=4.0
+notebook>=7.0
+ipykernel>=6.0
+ipywidgets>=8.0
+
+# ── Core Data Stack ──────────────────────────────────────────
+numpy>=1.26
+pandas>=2.1
+
+# ── Geospatial Libraries ─────────────────────────────────────
+# NOTE: On Windows, install these via conda-forge, not pip:
+#   conda install -c conda-forge geopandas shapely pyproj fiona rasterio
+geopandas>=0.14
+shapely>=2.0
+pyproj>=3.6
+fiona>=1.9
+rasterio>=1.3
+
+# ── Visualisation ────────────────────────────────────────────
+matplotlib>=3.8
+folium>=0.15
+mapclassify>=2.6      # needed by geopandas .explore()
+
+# ── HTTP / APIs ──────────────────────────────────────────────
+requests>=2.31
+
+# ── Data Validation ──────────────────────────────────────────
+pydantic>=2.5
+
+# ── Database (Weeks 6-8) ─────────────────────────────────────
+psycopg[binary]>=3.1
+SQLAlchemy>=2.0
+GeoAlchemy2>=0.14
+
+# ── Testing ──────────────────────────────────────────────────
+pytest>=7.4
+pytest-cov>=4.1
+
+# ── CityJSON (Week 9) ────────────────────────────────────────
+cjio>=0.9

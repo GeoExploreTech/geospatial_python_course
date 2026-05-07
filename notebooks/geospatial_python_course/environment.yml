@@ -1,0 +1,67 @@
+# ============================================================
+# Geospatial Python Mastery — Conda Environment
+# ============================================================
+# Recommended for ALL platforms (required for Windows).
+#
+# Create environment:
+#   conda env create -f environment.yml
+#
+# Activate:
+#   conda activate geoenv
+#
+# Update after pulling new changes:
+#   conda env update -f environment.yml --prune
+# ============================================================
+
+name: geoenv
+
+channels:
+  - conda-forge   # always first — best geospatial package support
+  - defaults
+
+dependencies:
+  # ── Python ─────────────────────────────────────────────────
+  - python=3.11
+
+  # ── Jupyter ────────────────────────────────────────────────
+  - jupyterlab>=4.0
+  - notebook>=7.0
+  - ipykernel>=6.0
+  - ipywidgets>=8.0
+
+  # ── Core Data ──────────────────────────────────────────────
+  - numpy>=1.26
+  - pandas>=2.1
+
+  # ── Geospatial ─────────────────────────────────────────────
+  - geopandas>=0.14
+  - shapely>=2.0
+  - pyproj>=3.6
+  - fiona>=1.9
+  - rasterio>=1.3
+  - libgdal            # native GDAL C library (conda handles this)
+
+  # ── Visualisation ──────────────────────────────────────────
+  - matplotlib>=3.8
+  - folium>=0.15
+  - mapclassify>=2.6
+
+  # ── HTTP / APIs ────────────────────────────────────────────
+  - requests>=2.31
+
+  # ── Data Validation ────────────────────────────────────────
+  - pydantic>=2.5
+
+  # ── Database (Weeks 6-8) ───────────────────────────────────
+  - psycopg>=3.1
+  - sqlalchemy>=2.0
+  - geoalchemy2>=0.14
+
+  # ── Testing ────────────────────────────────────────────────
+  - pytest>=7.4
+  - pytest-cov>=4.1
+
+  # ── pip-only packages ──────────────────────────────────────
+  - pip
+  - pip:
+      - cjio>=0.9        # CityJSON I/O (Week 9)
